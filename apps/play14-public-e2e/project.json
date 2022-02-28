@@ -4,10 +4,11 @@
   "projectType": "application",
   "targets": {
     "e2e": {
-      "executor": "@nrwl/cypress:cypress",
+      "executor": "@ns3/nx-jest-playwright:jest-playwright",
       "options": {
-        "cypressConfig": "apps/play14-public-e2e/cypress.json",
-        "devServerTarget": "play14-public:serve"
+        "devServerTarget": "play14-public:serve",
+        "jestConfig": "apps/play14-public-e2e/jest.config.js",
+        "passWithNoTests": true
       },
       "configurations": {
         "production": {
@@ -19,7 +20,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/play14-public-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/play14-public-e2e/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
