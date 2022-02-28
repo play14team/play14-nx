@@ -1,0 +1,46 @@
+{
+  "root": "apps/play14-public",
+  "sourceRoot": "apps/play14-public/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/gatsby:build",
+      "options": {
+        "outputPath": "apps/play14-public/public",
+        "uglify": true,
+        "color": true,
+        "profile": false
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/gatsby:server",
+      "options": {
+        "buildTarget": "play14-public:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "play14-public:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/play14-public/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/play14-public"],
+      "options": {
+        "jestConfig": "apps/play14-public/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

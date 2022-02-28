@@ -37,3 +37,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/apps/play14-public/node_modules
+/apps/play14-public/public
+/apps/play14-public/.cache

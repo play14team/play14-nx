@@ -2,3 +2,7 @@
 
 /dist
 /coverage
+
+/apps/play14-public/node_modules
+/apps/play14-public/public
+/apps/play14-public/.cache
