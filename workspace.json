@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "play14-community": "apps/play14-community",
+    "play14-community-e2e": "apps/play14-community-e2e"
+  }
+}

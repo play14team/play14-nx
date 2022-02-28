@@ -1,0 +1,28 @@
+{
+  "root": "apps/play14-community-e2e",
+  "sourceRoot": "apps/play14-community-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/play14-community-e2e/cypress.json",
+        "devServerTarget": "play14-community:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "play14-community:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/play14-community-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["play14-community"]
+}
