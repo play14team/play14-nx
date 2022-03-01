@@ -1,10 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "community": "apps/community",
+    "community-e2e": "apps/community-e2e",
     "home": "libs/home",
-    "play14-community": "apps/play14-community",
-    "play14-community-e2e": "apps/play14-community-e2e",
-    "play14-public": "apps/play14-public",
-    "play14-public-e2e": "apps/play14-public-e2e"
+    "public": "apps/public",
+    "public-e2e": "apps/public-e2e"
   }
 }

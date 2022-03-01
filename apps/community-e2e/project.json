@@ -1,0 +1,29 @@
+{
+  "root": "apps/community-e2e",
+  "sourceRoot": "apps/community-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@ns3/nx-jest-playwright:jest-playwright",
+      "options": {
+        "devServerTarget": "community:serve",
+        "jestConfig": "apps/community-e2e/jest.config.js",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "community:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/community-e2e/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["community"]
+}

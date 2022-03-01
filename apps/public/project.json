@@ -1,0 +1,46 @@
+{
+  "root": "apps/public",
+  "sourceRoot": "apps/public/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/gatsby:build",
+      "options": {
+        "outputPath": "apps/public/public",
+        "uglify": true,
+        "color": true,
+        "profile": false
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/gatsby:server",
+      "options": {
+        "buildTarget": "public:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "public:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/public/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/public"],
+      "options": {
+        "jestConfig": "apps/public/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
