@@ -8,6 +8,6 @@ describe('Index', () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const props: any = {};
     const { getByText } = render(<Index {...props} />);
-    expect(getByText(/Welcome play14-public/gi)).toBeTruthy();
+    expect(getByText(/We believe in playfulness/gi)).toBeTruthy();
   });
 });
