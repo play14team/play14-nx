@@ -1,3 +1,4 @@
+import React from 'react';
 import './home.module.scss';
 import { Welcome } from './welcome/welcome'
 
